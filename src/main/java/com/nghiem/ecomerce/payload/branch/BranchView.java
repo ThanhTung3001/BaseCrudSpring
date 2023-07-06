@@ -7,5 +7,6 @@ import lombok.Setter;
 @Setter
 @Getter
 public class BranchView extends BaseViewEntity {
+
     public String name ;
 }

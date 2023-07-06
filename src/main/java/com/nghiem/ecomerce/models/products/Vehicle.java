@@ -2,7 +2,7 @@ package com.nghiem.ecomerce.models.products;
 
 import com.nghiem.ecomerce.models.BaseEntity;
 import com.nghiem.ecomerce.models.User;
-import com.nghiem.ecomerce.models.attachments.FileUpload;
+import com.nghiem.ecomerce.models.attachments.FileEntity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -21,6 +21,9 @@ public class Vehicle extends BaseEntity {
 
     @Column(nullable = false)
     private String plateNumber;
+
+    @Column
+    private String Content;
 
     @Column(nullable = false)
     private LocalDate manufactureDate;
@@ -56,7 +59,7 @@ public class Vehicle extends BaseEntity {
     private Branch branch;
 
     @OneToMany(mappedBy = "vehicle", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<FileUpload> fileUploads;
+    private Set<FileEntity> fileUploads;
 
     @OneToMany(mappedBy = "vehicle", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<Comment> comments;
